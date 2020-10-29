@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 import { About } from './About'
-import { Experience } from './Experience'
+import { Experiences } from './Experiences'
 import { Hero } from './Hero'
 import { Projects } from './Projects'
 import { Skills } from './Skills'
@@ -12,7 +12,7 @@ export const Content = () => {
       <Hero />
       <About />
       <Skills />
-      <Experience />
+      <Experiences />
       <Projects />
     </Fragment>
   )

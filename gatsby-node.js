@@ -3,6 +3,8 @@ const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
+const nonPages = ["navbar", "footer", "about", "skills", "experiences", "projects"]
+
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
 
@@ -29,10 +31,7 @@ exports.createPages = ({ actions, graphql }) => {
     }
 
     const pages = result.data.allMarkdownRemark.edges.filter(edge => {
-      if (
-        edge.node.frontmatter.templateKey === "navbar"
-        || edge.node.frontmatter.templateKey === "footer"
-      ) {
+      if (nonPages.includes(edge.node.frontmatter.templateKey)) {
         return false;
       }
       return true

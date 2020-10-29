@@ -24,7 +24,105 @@ collections:
           - {label: Heading, name: heading, widget: string}
           - {label: Subheading, name: subheading, widget: string}
           - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
+          - {label: Description, name: description, widget: string}          
+      - file: "src/pages/about/index.md"
+        label: "About Section"
+        name: "about"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
+          - {label: Title, name: title, widget: string}
           - {label: Description, name: description, widget: string}
+      - file: "src/pages/skills/index.md"
+        label: "Skills Section"
+        name: "skills"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "skills"}
+          - {label: Subheading, name: subheading, widget: string}
+          - {
+            label: "Skills",
+            name: "skillItems",
+            widget: "list",
+            fields:
+              [
+                { label: "Skill Name", name: "skillName", widget: "string" },
+              ],
+          }
+      - file: "src/pages/experiences/index.md"
+        label: "Experiences Section"
+        name: "experiences"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "experiences"}
+          - {label: Subheading, name: subheading, widget: string}
+          - {
+            label: "Experiences",
+            name: "experienceItems",
+            widget: "list",
+            fields:
+              [
+                { 
+                  label: "Experience", 
+                  name: "experience", 
+                  widget: "object",
+                  fields:
+                    [
+                      { label: "Title", name: "title", widget: "string" },
+                      { label: "Company", name: "company", widget: "string" },
+                      { label: "Location", name: "location", widget: "string" },
+                      { label: "Company Website", name: "companyWebsite", widget: "string" },
+                      { label: "Starting Date", name: "startingDate", widget: "date", date_format: "MMM,YYYY" },
+                      { label: "Ending Date", name: "endingDate", widget: "date", date_format: "MMM,YYYY" },
+                      { 
+                        label: "Duties, Responsibilities, Achievements", 
+                        name: "duties", 
+                        widget: "list",
+                        hint: "There is no limit to number of duties, responsibilities, or achievements per experience. However, it's best to add up to 5.",
+                        fields:
+                          [
+                            { label: "Duty, Responsibility, or Achievment", name: "duty", widget: "string"}
+                          ],
+                      },    
+                    ] 
+                },
+              ],
+          }
+      - file: "src/pages/projects/index.md"
+        label: "Projects Section"
+        name: "projects"
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projects"}
+          - {label: Subheading, name: subheading, widget: string}
+          - {
+            label: "Projects",
+            name: "projectsItems",
+            widget: "list",
+            fields:
+              [
+                { 
+                  label: "Project", 
+                  name: "project", 
+                  widget: "object",
+                  fields:
+                    [
+                      { label: "Project Title", name: "title", widget: "string" },
+                      { label: "Project Image", name: "image", widget: "image", hint: "Using a gif can quickly show how the project works." },
+                      { label: "Github Link", name: "githubLink", widget: "string", required: false },
+                      { label: "External Link", name: "externalLink", widget: "string", required: false, hint: "An exeternal link can be the address to the project's webiste if it is hosted on the internet for example." },                      
+                      { label: "Project Description", name: "description", widget: "string" },
+                      { 
+                        label: "Technologies used for this project", 
+                        name: "technologies", 
+                        widget: "list",
+                        hint: "There is no limit to number of technologies per project. However, it's best to add the core technologies or the ones that were used the most.",
+                        fields:
+                          [
+                            { label: "Technology", name: "technology", widget: "string"}
+                          ],
+                      },    
+                    ] 
+                },
+              ],
+          }
+
   - name: "navbar"
     label: "Navbar"
     files:

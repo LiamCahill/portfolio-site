@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
 
-export const Experience = () => {
+export const Experiences = () => {
     return (
         <Fragment>
             {'<--Experience-->'}
