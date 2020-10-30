@@ -1,7 +1,7 @@
 ---
 templateKey: navbar
 logoImage:
-  image: /img/logo.svg
+  image: /img/logo.png
   imageAlt: Emerson Argueta
 menuItems:
   - label: home

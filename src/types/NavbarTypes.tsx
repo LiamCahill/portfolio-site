@@ -9,7 +9,18 @@ export type TMenuItem = {
     linkType: string
     linkURL: string
 }
-export interface INavbarData {
+export interface INavbar {
     logoImage: TLogoImage
     menuItems: Array<TMenuItem>
+}
+export type TNavbarData = {
+
+    edges: Array<{
+        node: {
+            id: string,
+            frontmatter: INavbar
+        }
+    }>
+
+
 }

@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import { INavbarData } from '../../types/NavbarTypes'
+import { INavbar } from '../../types/NavbarTypes'
 import { Logo } from './Logo'
 import { Menu } from './Menu'
 import { Hamburger } from './Hamburger'
 
 
-export const NavbarTemplate = ({ data }: { data: INavbarData }) => {
+export const NavbarTemplate = ({ data }: { data: INavbar }) => {
 
   const [active, setActive] = useState(false)
   const [navBarActiveClass, setNavBarActiveClass] = useState('')
@@ -52,21 +52,10 @@ export const NavbarTemplate = ({ data }: { data: INavbarData }) => {
   )
 }
 
-interface TProps {
-  data: {
-    edges: Array<{
-      node: {
-        id: string,
-        frontmatter: INavbarData
-      }
-    }>
-  }
 
-}
-export const Navbar = (props: TProps) => {
-  if (!props.data) {
+export const Navbar = ({ data }: { data: INavbar | null }) => {
+  if (!data) {
     return null;
   }
-  const data: INavbarData = props.data.edges[0].node.frontmatter;
   return <NavbarTemplate data={data} />;
 };

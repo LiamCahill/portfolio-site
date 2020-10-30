@@ -1,14 +1,17 @@
-import React from 'react'
+import React, { Fragment } from 'react'
 import { Helmet } from 'react-helmet'
 import './all.sass'
 import { graphql, withPrefix } from 'gatsby'
 import useSiteMetadata from './SiteMetadata'
 import { Navbar } from './navbar/Navbar'
 import { Footer } from './footer/Footer'
+import { ILayout } from '../types/LayoutTypes'
 
 
-export const Layout = ({ footerData = null, navbarData = null, children }: { footerData: any | null, navbarData: any | null, children: JSX.Element }) => {
+export const Layout = ({ navbar, footer, children }: ILayout) => {
   const { title, description } = useSiteMetadata()
+  const content = children
+
   return (
     <div>
       <Helmet>
@@ -49,9 +52,9 @@ export const Layout = ({ footerData = null, navbarData = null, children }: { foo
           content={`${withPrefix('/')}img/og-image.jpg`}
         />
       </Helmet>
-      <Navbar data={navbarData} />
-      <div>{children}</div>
-      <Footer data={footerData} />
+      <Navbar data={navbar} />
+      <Fragment>{content}</Fragment>
+      <Footer data={footer} />
     </div>
   )
 }

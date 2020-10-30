@@ -12,27 +12,25 @@ media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: "content"
+    label: "Content"
     files:
-      - file: "src/pages/index.md"
-        label: "Landing Page"
-        name: "index"
+      - file: "src/content/hero/index.md"
+        label: "Hero (this is the first thing that is seen when someone goes to the website)"
+        name: "hero"
         fields:
-          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "index-page"}
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "hero"}
           - {label: Title, name: title, widget: string}
-          - {label: Heading, name: heading, widget: string}
-          - {label: Subheading, name: subheading, widget: string}
-          - {label: Mainpitch, name: mainpitch, widget: object, fields: [{label: Title, name: title, widget: string}, {label: Description, name: description, widget: text}]}
+          - {label: Subtitle, name: subtitle, widget: string}
           - {label: Description, name: description, widget: string}          
-      - file: "src/pages/about/index.md"
+      - file: "src/content/about/index.md"
         label: "About Section"
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
           - {label: Title, name: title, widget: string}
           - {label: Description, name: description, widget: string}
-      - file: "src/pages/skills/index.md"
+      - file: "src/content/skills/index.md"
         label: "Skills Section"
         name: "skills"
         fields:
@@ -47,7 +45,7 @@ collections:
                 { label: "Skill Name", name: "skillName", widget: "string" },
               ],
           }
-      - file: "src/pages/experiences/index.md"
+      - file: "src/content/experiences/index.md"
         label: "Experiences Section"
         name: "experiences"
         fields:
@@ -85,7 +83,7 @@ collections:
                 },
               ],
           }
-      - file: "src/pages/projects/index.md"
+      - file: "src/content/projects/index.md"
         label: "Projects Section"
         name: "projects"
         fields:
@@ -126,7 +124,7 @@ collections:
   - name: "navbar"
     label: "Navbar"
     files:
-      - file: "src/pages/navbar/index.md"
+      - file: "src/content/navbar/index.md"
         label: "Navbar"
         name: "navbar"
         fields:
@@ -155,7 +153,7 @@ collections:
   - name: "footer"
     label: "Footer"
     files:
-      - file: "src/pages/footer/index.md"
+      - file: "src/content/footer/index.md"
         label: "Footer"
         name: "footer"
         fields:

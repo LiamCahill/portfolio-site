@@ -1,10 +1,10 @@
 import React from "react";
-import { IFooterData } from "../../types/FooterTypes";
+import { IFooter } from "../../types/FooterTypes";
 import { Email } from "./Email";
 import { Socials } from "./Socials";
 
 
-export const FooterTemplate = ({ data }: { data: IFooterData }) => {
+export const FooterTemplate = ({ data }: { data: IFooter }) => {
   const { email, socialLinks } = data;
 
   return (
@@ -22,22 +22,11 @@ export const FooterTemplate = ({ data }: { data: IFooterData }) => {
   );
 };
 
-interface TProps {
-  data: {
-    edges: Array<{
-      node: {
-        id: string,
-        frontmatter: IFooterData
-      }
-    }>
-  }
-
-}
-export const Footer = (props: TProps) => {
-  if (!props.data) {
+export const Footer = ({ data }: { data: IFooter | null }) => {
+  if (!data) {
     return null;
   }
-  const data = props.data.edges[0].node.frontmatter;
+
   return <FooterTemplate data={data} />;
 };
 

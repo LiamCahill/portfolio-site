@@ -10,7 +10,18 @@ export type TSocialLink = {
     label: string,
     linkURL: string
 }
-export interface IFooterData {
+export interface IFooter {
     email: TEmail,
     socialLinks: Array<TSocialLink>
+}
+export type TFooterData = {
+
+    edges: Array<{
+        node: {
+            id: string,
+            frontmatter: IFooter
+        }
+    }>
+
+
 }

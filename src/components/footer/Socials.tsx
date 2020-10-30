@@ -8,7 +8,7 @@ export const Socials = ({ socialLinks }: { socialLinks: Array<TSocialLink> }) =>
             {socialLinks.length > 0 && (
                 <ul className="footer-socialMenu">
                     {socialLinks.map(socialLink => {
-                        const socialLinkImage = !socialLink.image.childImageSharp && socialLink.image.extension === "svg" ? socialLink.image.publicURL : socialLink.image.childImageSharp
+                        const socialLinkImage = socialLink.image.publicURL
                         return (
                             <li key={socialLink.linkURL} className="footer-socialMenuItem">
                                 <a

@@ -3,12 +3,12 @@ import React, { Fragment } from 'react'
 import { TLogoImage } from '../../types/NavbarTypes'
 
 export const Logo = ({ logo }: { logo: TLogoImage }) => {
-    const logoImage = !logo.image.childImageSharp && logo.image.extension === "svg" ? logo.image.publicURL : logo.image.childImageSharp
+    const logoImage = logo.image.publicURL
 
     return (
         <Fragment>
             <Link to="/" className="navbar-item" title="Logo">
-                <img src={logoImage} alt={logo.imageAlt} style={{ width: '88px' }} />
+                <img src={logoImage} alt={logo.imageAlt} style={{ width: '40px' }} />
             </Link>
         </Fragment>
     )
