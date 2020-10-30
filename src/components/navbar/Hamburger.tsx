@@ -1,15 +1,14 @@
 import React, { Fragment } from 'react'
 
 interface TProps {
-    navBarActiveClass: string,
+    hamburgerIsActive: string,
     toggleHamburger: Function
 }
-export const Hamburger = ({ navBarActiveClass, toggleHamburger }: TProps) => {
+export const Hamburger = ({ hamburgerIsActive, toggleHamburger }: TProps) => {
     return (
         <Fragment>
             <div
-                className={`navbar-burger burger ${navBarActiveClass}`}
-                data-target="navMenu"
+                className={`navbar-burger burger ${hamburgerIsActive}`}
                 onClick={() => toggleHamburger()}
             >
                 {/* Three lines for hamburger menu */}

@@ -1,53 +1,42 @@
 import React, { useState } from 'react'
-import { INavbar } from '../../types/NavbarTypes'
+import { INavbar } from '../../types/LayoutTypes'
 import { Logo } from './Logo'
 import { Menu } from './Menu'
 import { Hamburger } from './Hamburger'
 
 
 export const NavbarTemplate = ({ data }: { data: INavbar }) => {
-
   const [active, setActive] = useState(false)
-  const [navBarActiveClass, setNavBarActiveClass] = useState('')
-  const toggleHamburger = () => {
-    // toggle the active boolean in the state
-    setActive(!active);
-    // after state has been updated,
+  const [hamburgerIsActive, setHamburgerIsActive] = useState('')
 
-    // set the class in state for the navbar accordingly
+  const toggleHamburger = () => {
+    setActive(!active);
+
     active
-      ? setNavBarActiveClass('is-active')
-      : setNavBarActiveClass('')
+      ? setHamburgerIsActive('is-active')
+      : setHamburgerIsActive('')
 
   }
 
-
   return (
-    <nav
-      className="navbar is-transparent"
-      role="navigation"
-      aria-label="main-navigation"
-    >
-      <div className="container">
-
-        <div className="navbar-brand">
-          <Logo logo={data.logoImage} />
-          <Hamburger
-            navBarActiveClass={navBarActiveClass}
-            toggleHamburger={toggleHamburger}
-          />
-        </div>
-
-        <div
-          id="navMenu"
-          className={`navbar-menu ${navBarActiveClass}`}
-        >
-          <div className="navbar-start has-text-centered">
-            <Menu menuItems={data.menuItems} />
-          </div>
-        </div>
-
+    <nav>
+      <div>
+        <Logo logo={data.logoImage} />
+        <Hamburger
+          hamburgerIsActive={hamburgerIsActive}
+          toggleHamburger={toggleHamburger}
+        />
       </div>
+
+      {/* CSS class hides the menu when the hamburger is in use and is not active*/}
+      <div
+        className={`navbar-menu ${hamburgerIsActive}`}
+      >
+        <div>
+          <Menu menuItems={data.menuItems} />
+        </div>
+      </div>
+
     </nav>
   )
 }

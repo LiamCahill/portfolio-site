@@ -1,5 +1,5 @@
 import React from "react";
-import { IFooter } from "../../types/FooterTypes";
+import { IFooter } from "../../types/LayoutTypes";
 import { Email } from "./Email";
 import { Socials } from "./Socials";
 

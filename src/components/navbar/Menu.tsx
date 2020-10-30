@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { TMenuItem } from '../../types/NavbarTypes'
+import { TMenuItem } from '../../types/LayoutTypes'
 import { CustomLink } from '../CustomLink'
 
 export const Menu = ({ menuItems }: { menuItems: Array<TMenuItem> }) => {
@@ -12,7 +12,6 @@ export const Menu = ({ menuItems }: { menuItems: Array<TMenuItem> }) => {
                             <CustomLink
                                 linkType={menuItem.linkType}
                                 linkURL={menuItem.linkURL}
-                                className="navbar-menuLink"
                             >
                                 {menuItem.label}
                             </CustomLink>

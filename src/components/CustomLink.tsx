@@ -5,7 +5,7 @@ interface TProps {
     linkType: string,
     linkURL: string,
     children: any,
-    className: string
+    className?: string
 }
 export const CustomLink = ({ linkType, linkURL, children, className = "" }: TProps) => {
     if (linkType === "internal") {

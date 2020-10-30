@@ -35,14 +35,14 @@ collections:
         name: "skills"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "skills"}
-          - {label: Subheading, name: subheading, widget: string}
           - {
             label: "Skills",
             name: "skillItems",
             widget: "list",
             fields:
               [
-                { label: "Skill Name", name: "skillName", widget: "string" },
+                { label: "Skill Name", name: "name", widget: "string" },
+                { label: "Skill Icon", name: "icon", widget: "image", required: false },
               ],
           }
       - file: "src/content/experiences/index.md"
@@ -50,77 +50,59 @@ collections:
         name: "experiences"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "experiences"}
-          - {label: Subheading, name: subheading, widget: string}
           - {
             label: "Experiences",
             name: "experienceItems",
             widget: "list",
-            fields:
+            fields:                 
               [
+                { label: "Title", name: "title", widget: "string" },
+                { label: "Company", name: "company", widget: "string" },
+                { label: "Location", name: "location", widget: "string" },
+                { label: "Company Website", name: "companyWebsite", widget: "string" },
+                { label: "Starting Date", name: "startingDate", widget: "date", date_format: "MMM,YYYY" },
+                { label: "Ending Date", name: "endingDate", widget: "date", date_format: "MMM,YYYY" },
                 { 
-                  label: "Experience", 
-                  name: "experience", 
-                  widget: "object",
+                  label: "Duties, Responsibilities, or Achievements", 
+                  name: "duties", 
+                  widget: "list",
+                  hint: "There is no limit to number of duties, responsibilities, or achievements per experience. However, it's best to add up to 5.",
                   fields:
                     [
-                      { label: "Title", name: "title", widget: "string" },
-                      { label: "Company", name: "company", widget: "string" },
-                      { label: "Location", name: "location", widget: "string" },
-                      { label: "Company Website", name: "companyWebsite", widget: "string" },
-                      { label: "Starting Date", name: "startingDate", widget: "date", date_format: "MMM,YYYY" },
-                      { label: "Ending Date", name: "endingDate", widget: "date", date_format: "MMM,YYYY" },
-                      { 
-                        label: "Duties, Responsibilities, Achievements", 
-                        name: "duties", 
-                        widget: "list",
-                        hint: "There is no limit to number of duties, responsibilities, or achievements per experience. However, it's best to add up to 5.",
-                        fields:
-                          [
-                            { label: "Duty, Responsibility, or Achievment", name: "duty", widget: "string"}
-                          ],
-                      },    
-                    ] 
-                },
-              ],
+                      { label: "Duty, Responsibility, or Achievment", name: "duty", widget: "string"}
+                    ],
+                },    
+              ],  
           }
       - file: "src/content/projects/index.md"
         label: "Projects Section"
         name: "projects"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projects"}
-          - {label: Subheading, name: subheading, widget: string}
           - {
             label: "Projects",
             name: "projectsItems",
             widget: "list",
             fields:
-              [
+              [  
+                { label: "Project Title", name: "title", widget: "string" },
+                { label: "Project Image", name: "image", widget: "image", hint: "Using a gif can quickly show how the project works." },
+                { label: "Github Link", name: "githubLink", widget: "string", required: false },
+                { label: "External Link", name: "externalLink", widget: "string", required: false, hint: "An exeternal link can be the address to the project's webiste if it is hosted on the internet for example." },                      
+                { label: "Project Description", name: "description", widget: "string" },
                 { 
-                  label: "Project", 
-                  name: "project", 
-                  widget: "object",
+                  label: "Technologies used for this project", 
+                  name: "technologies", 
+                  widget: "list",
+                  hint: "There is no limit to number of technologies per project. However, it's best to add the core technologies or the ones that were used the most.",
                   fields:
                     [
-                      { label: "Project Title", name: "title", widget: "string" },
-                      { label: "Project Image", name: "image", widget: "image", hint: "Using a gif can quickly show how the project works." },
-                      { label: "Github Link", name: "githubLink", widget: "string", required: false },
-                      { label: "External Link", name: "externalLink", widget: "string", required: false, hint: "An exeternal link can be the address to the project's webiste if it is hosted on the internet for example." },                      
-                      { label: "Project Description", name: "description", widget: "string" },
-                      { 
-                        label: "Technologies used for this project", 
-                        name: "technologies", 
-                        widget: "list",
-                        hint: "There is no limit to number of technologies per project. However, it's best to add the core technologies or the ones that were used the most.",
-                        fields:
-                          [
-                            { label: "Technology", name: "technology", widget: "string"}
-                          ],
-                      },    
-                    ] 
-                },
+                      { label: "Technology", name: "technology", widget: "string"}
+                      { label: "Technology Icon", name: "technologyIcon", widget: "image", required: false}
+                    ],
+                },    
               ],
           }
-
   - name: "navbar"
     label: "Navbar"
     files:
