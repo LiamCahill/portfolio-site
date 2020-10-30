@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { TSocialLink } from '../../types/LayoutTypes'
+import { TSocialLink } from '../../../types/LayoutTypes'
 
 
 export const Socials = ({ socialLinks }: { socialLinks: Array<TSocialLink> }) => {

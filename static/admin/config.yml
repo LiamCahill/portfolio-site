@@ -97,7 +97,7 @@ collections:
                   hint: "There is no limit to number of technologies per project. However, it's best to add the core technologies or the ones that were used the most.",
                   fields:
                     [
-                      { label: "Technology", name: "technology", widget: "string"}
+                      { label: "Technology", name: "technology", widget: "string"},
                       { label: "Technology Icon", name: "technologyIcon", widget: "image", required: false}
                     ],
                 },    

@@ -1,6 +1,6 @@
 import React from "react";
 import { PreviewTemplateComponentProps } from 'netlify-cms-core'
-import { NavbarTemplate } from "../../components/navbar/Navbar";
+import { NavbarTemplate } from "../../components/layout/Navbar";
 
 const NavbarPreview = ({ entry }: PreviewTemplateComponentProps) => {
     const data = entry.getIn(["data"]).toJS();

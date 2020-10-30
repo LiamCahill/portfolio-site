@@ -1,6 +1,8 @@
 import React, { Fragment } from 'react'
-import { TMenuItem } from '../../types/LayoutTypes'
-import { CustomLink } from '../CustomLink'
+import { TMenuItem } from '../../../types/LayoutTypes'
+import { CustomLink } from '../../CustomLink'
+
+
 
 export const Menu = ({ menuItems }: { menuItems: Array<TMenuItem> }) => {
     return (

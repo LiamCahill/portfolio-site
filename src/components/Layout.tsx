@@ -3,9 +3,9 @@ import { Helmet } from 'react-helmet'
 import './all.sass'
 import { graphql, withPrefix } from 'gatsby'
 import useSiteMetadata from './SiteMetadata'
-import { Navbar } from './navbar/Navbar'
-import { Footer } from './footer/Footer'
 import { ILayout } from '../types/LayoutTypes'
+import { Footer } from './layout/Footer'
+import { Navbar } from './layout/Navbar'
 
 
 export const Layout = ({ navbar, footer, children }: ILayout) => {

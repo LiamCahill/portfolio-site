@@ -1,6 +1,6 @@
 import { Link } from 'gatsby'
 import React, { Fragment } from 'react'
-import { TLogoImage } from '../../types/LayoutTypes'
+import { TLogoImage } from '../../../types/LayoutTypes'
 
 export const Logo = ({ logo }: { logo: TLogoImage }) => {
     const logoImage = logo.image.publicURL

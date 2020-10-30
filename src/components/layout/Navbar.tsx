@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import { INavbar } from '../../types/LayoutTypes'
-import { Logo } from './Logo'
-import { Menu } from './Menu'
-import { Hamburger } from './Hamburger'
+import { Hamburger } from './navbar/Hamburger'
+import { Logo } from './navbar/Logo'
+import { Menu } from './navbar/Menu'
+
 
 
 export const NavbarTemplate = ({ data }: { data: INavbar }) => {

@@ -1,7 +1,7 @@
 import React from "react";
 import { IFooter } from "../../types/LayoutTypes";
-import { Email } from "./Email";
-import { Socials } from "./Socials";
+import { Email } from "./footer/Email";
+import { Socials } from "./footer/Socials";
 
 
 export const FooterTemplate = ({ data }: { data: IFooter }) => {
