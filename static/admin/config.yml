@@ -37,7 +37,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "skills"}
           - {
             label: "Skills",
-            name: "skillItems",
+            name: "skills",
             widget: "list",
             fields:
               [
@@ -52,7 +52,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "experiences"}
           - {
             label: "Experiences",
-            name: "experienceItems",
+            name: "experiences",
             widget: "list",
             fields:                 
               [
@@ -81,7 +81,7 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "projects"}
           - {
             label: "Projects",
-            name: "projectsItems",
+            name: "projects",
             widget: "list",
             fields:
               [  
