@@ -22,14 +22,14 @@ collections:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "hero"}
           - {label: Title, name: title, widget: string}
           - {label: Subtitle, name: subtitle, widget: string}
-          - {label: Description, name: description, widget: string}          
+          - {label: Description, name: description, widget: text}          
       - file: "src/content/about/index.md"
         label: "About Section"
         name: "about"
         fields:
           - {label: "Template Key", name: "templateKey", widget: "hidden", default: "about"}
           - {label: Title, name: title, widget: string}
-          - {label: Description, name: description, widget: string}
+          - {label: Description, name: description, widget: text}
       - file: "src/content/skills/index.md"
         label: "Skills Section"
         name: "skills"
