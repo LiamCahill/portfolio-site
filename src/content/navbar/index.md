@@ -1,17 +1,19 @@
 ---
 templateKey: navbar
+menuItems:
+  - label: about
+    linkType: internal
+    linkURL: /#about
+  - label: skills
+    linkType: internal
+    linkURL: /#skills
+  - linkType: internal
+    label: experiences
+    linkURL: /#experiences
+  - label: projects
+    linkType: internal
+    linkURL: /#projects
 logoImage:
   image: /img/logo.png
   imageAlt: Emerson Argueta
-menuItems:
-  - label: home
-    linkType: internal
-    linkURL: /
-  - label: about
-    linkType: internal
-    linkURL: /about
-  - label: past meetups
-    linkType: internal
-    linkURL: /meetups
 ---
-
