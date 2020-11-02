@@ -1,6 +1,6 @@
 ---
 templateKey: about
 title: About
-description: The about description will go here. It will contain a paragraph explaining who I am as a web developer.
+description: Here is where I will explain my experience and aspirations as a web developer.
 
 ---
